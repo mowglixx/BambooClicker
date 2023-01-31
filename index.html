@@ -4,15 +4,136 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./main.css">
     <title>Bamboo clicker</title>
 </head>
 <body>
-    <h1>Bamboo Clicker</h1>
-    <p>Bamboo: <span id="score">0</span></p>
-    <img src="./img/bamboo.png" alt="Bamboo" id="bamboo">
-    <div>
-        <button class="buy">Nowa platnacja: [<span class="cost">10</span>]: <span class="amount">0</span></button>
-        <!--<p>Nowa fabryka: <span class="cost">100</span></p>-->
+    <nav>
+
+    </nav>
+    <div class="gameCanvas">
+    <div class="left">
+        <table id="bambooGrowth">
+            <tr id="plant">
+                <td></td>
+                <td>Bamboo plant</td>
+                <td>[<span class="plantCost">10</span> bamboo]:</td>
+                <td><span class="plantAmount">0</span></td>
+            </tr>
+            <tr id="plot">
+                <td></td>
+                <td>Bamboo plot</td>
+                <td>[<span class="plotCost">10</span> plants]:</td>
+                <td><span class="plotAmount">0</span></td>
+            </tr>
+            <tr id="garden">
+                <td></td>
+                <td>Bamboo garden</td>
+                <td>[<span class="gardenCost">10</span> plots]:</td>
+                <td><span class="gardenAmount">0</span></td>
+            </tr>
+            <tr id="park">
+                <td></td>
+                <td>Bamboo park</td>
+                <td>[<span class="parkCost">10</span> gardens]:</td>
+                <td><span class="parkAmount">0</span></td>
+            </tr>
+            <tr id="forest">
+                <td></td>
+                <td>Bamboo forest</td>
+                <td>[<span class="forestCost">10</span> parks]:</td>
+                <td><span class="forestAmount">0</span></td>
+            </tr>
+            <tr id="jungle">
+                <td></td>
+                <td>Bamboo jungle</td>
+                <td>[<span class="jungleCost">10</span> forests]:</td>
+                <td><span class="jungleAmount">0</span></td>
+            </tr>
+            <tr id="island">
+                <td></td>
+                <td>Bamboo island</td>
+                <td>[<span class="islandCost">10</span> jungles]:</td>
+                <td><span class="islandAmount">0</span></td>
+            </tr>
+            <tr id="planet">
+                <td></td>
+                <td>Bamboo planet</td>
+                <td>[<span class="planetCost">10</span> islands]:</td>
+                <td><span class="planetAmount">0</span></td>
+            </tr>
+            <tr id="system">
+                <td></td>
+                <td>Bamboo system</td>
+                <td>[<span class="systemCost">10</span> plantes]:</td>
+                <td><span class="systemAmount">0</span></td>
+            </tr>
+        </table>
+    </div>
+    <div class="middle">
+        <h1>Bamboo Clicker</h1>
+        <p>Bamboo: <span id="score">0</span></p>
+        <p>Bamboo per second: <span id="scorePerSecond">0</span></p>
+        <img src="./img/bamboo.png" alt="Bamboo" id="bamboo">
+    </div>
+    <div class="right">
+        <table id="bambooGrowth">
+            <tr id="plant">
+                <td></td>
+                <td>Bamboo plant</td>
+                <td>[<span class="plantCost">10</span> bamboo]:</td>
+                <td><span class="plantAmount">0</span></td>
+            </tr>
+            <tr id="plot">
+                <td></td>
+                <td>Bamboo plot</td>
+                <td>[<span class="plotCost">10</span> plants]:</td>
+                <td><span class="plotAmount">0</span></td>
+            </tr>
+            <tr id="garden">
+                <td></td>
+                <td>Bamboo garden</td>
+                <td>[<span class="gardenCost">10</span> plots]:</td>
+                <td><span class="gardenAmount">0</span></td>
+            </tr>
+            <tr id="park">
+                <td></td>
+                <td>Bamboo park</td>
+                <td>[<span class="parkCost">10</span> gardens]:</td>
+                <td><span class="parkAmount">0</span></td>
+            </tr>
+            <tr id="forest">
+                <td></td>
+                <td>Bamboo forest</td>
+                <td>[<span class="forestCost">10</span> parks]:</td>
+                <td><span class="forestAmount">0</span></td>
+            </tr>
+            <tr id="jungle">
+                <td></td>
+                <td>Bamboo jungle</td>
+                <td>[<span class="jungleCost">10</span> forests]:</td>
+                <td><span class="jungleAmount">0</span></td>
+            </tr>
+            <tr id="island">
+                <td></td>
+                <td>Bamboo island</td>
+                <td>[<span class="islandCost">10</span> jungles]:</td>
+                <td><span class="islandAmount">0</span></td>
+            </tr>
+            <tr id="planet">
+                <td></td>
+                <td>Bamboo planet</td>
+                <td>[<span class="planetCost">10</span> islands]:</td>
+                <td><span class="planetAmount">0</span></td>
+            </tr>
+            <tr id="system">
+                <td></td>
+                <td>Bamboo system</td>
+                <td>[<span class="systemCost">10</span> plantes]:</td>
+                <td><span class="systemAmount">0</span></td>
+            </tr>
+        </table>
+    </div>
     </div>
     <footer>
         &copy; Jakub Szpyra 2023

@@ -1,0 +1,30 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+img{
+    width: 100%;
+    margin: auto 0;
+}
+
+.gameCanvas{
+    display: flex;
+}
+
+.left{
+    width: 20%;
+}
+
+.middle{
+    width: 60%;
+}
+
+.right{
+    width: 20%;
+}
+
+table img {
+    width: 50%;
+}
