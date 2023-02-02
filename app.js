@@ -175,6 +175,7 @@ const building = {
             this.cost[index] = Math.ceil(this.cost[index] * 1.15)
             display.updateScore()
             display.udpateShop()
+            display.updateUpgrades()
         }
     }
 }
@@ -270,10 +271,26 @@ const loadGame = () => {
         if (typeof savedGame.clickingPower !== "undefined") {game.clickingPower = savedGame.clickingPower}
         if (typeof savedGame.totalCoins !== "undefined") {game.totalCoins = savedGame.totalCoins}
         if (typeof savedGame.version !== "undefined") {game.version = savedGame.version}
-        if (typeof savedGame.buildingAmount !== "undefined") {building.amount = savedGame.buildingAmount}
-        if (typeof savedGame.buildingIncome !== "undefined") {game.income = savedGame.buildingIncome}
-        if (typeof savedGame.buildingCost !== "undefined") {game.cost = savedGame.buildingCost}
-        if (typeof savedGame.upgradePurchased !== "undefined") {upgrade.purchased = savedGame.upgradePurchased}
+        if (typeof savedGame.buildingAmount !== "undefined") {
+            for (i=0; i < savedGame.buildingAmount.length; i++){
+                building.amount[i] = savedGame.buildingAmount[i]
+            }
+        }
+        if (typeof savedGame.buildingIncome !== "undefined") {
+            for (i=0; i < savedGame.buildingAmount.length; i++){
+                building.income[i] = savedGame.buildingIncome[i]
+            }
+        }
+        if (typeof savedGame.buildingCost !== "undefined") {
+            for (i=0; i < savedGame.buildingAmount.length; i++){
+                building.cost[i] = savedGame.buildingCost[i]
+            }
+        }
+        if (typeof savedGame.upgradePurchased !== "undefined") {
+            for (i=0; i < savedGame.buildingAmount.length; i++){
+                upgrade.purchased[i] = savedGame.upgradePurchased[i]
+            }
+        }
     }
 }
 
@@ -295,15 +312,24 @@ const loadGame = () => {
         upgrade.purchase(event.target.getAttribute("index"))
     })
 
-    setInterval(() => {
-        game.bamboo += Math.round(game.getBambooPerSecond() * 10) / 10
-        game.totalBamboo += Math.round(game.getBambooPerSecond() * 10) / 10
-        display.updateScore()
-        display.updateUpgrades()
-    }, 1000)
-//Loading everything on refresh
+//Adding bamboo every second to a score
+setInterval(() => {
+    game.bamboo += Math.round(game.getBambooPerSecond() * 10) / 10
+    game.totalBamboo += Math.round(game.getBambooPerSecond() * 10) / 10
+    display.updateScore()
+}, 1000)
 
+//Executes every 10 seconds - Saves game and udates all displays
+setInterval(() => {
+    display.updateUpgrades()
+    display.updateScore()
+    display.udpateShop()
+    saveGame()
+}, 10000)
+
+//Loading everything on refresh
 window.onload = function(){
+    loadGame()
     display.udpateShop()
     display.updateScore()
     display.updateUpgrades()
