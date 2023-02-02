@@ -11,6 +11,7 @@ const upgradeCost = document.querySelector(".plantCost")
 const buyButton = document.querySelector("#plant")
 const plantAmountDisplay = document.querySelector(".plantAmount")
 const shopContainer = document.querySelector("#shopContainer")
+const upgradeContainer = document.querySelector("#upgradeContainer")
 //Updating score on refresh from localStorage
 
 //bambooScoreDisplay.innerHTML = localStorage.getItem("score")
@@ -82,13 +83,26 @@ const game = {
 const display = {
     updateScore: function(){
         bambooScoreDisplay.innerHTML = Math.round(game.bamboo * 10) / 10
-        document.title = `${Math.round(game.bamboo * 10) / 10} bamboo - Bamboo clicker`
+        //document.title = `${Math.round(game.bamboo * 10) / 10} bamboo - Bamboo clicker`
         bambooPerSecondDisplay.innerHTML = game.getBambooPerSecond()
     },
     udpateShop: function(){
         shopContainer.innerHTML = ""
         for (i=0; i < building.name.length; i++){
             shopContainer.innerHTML += `<table id="${building.name[i]}" class="unselectable" index="${i}"><tr index="${i}"><td class="image" index="${i}"></td><td index="${i}">Bamboo ${building.name[i]}</td><td index="${i}">[<span index="${i}">${building.cost[i]}</span> ${building.price[i]}]:</td><td index="${i}"><span index="${i}">${building.amount[i]}</span></td></tr></table>`
+        }
+    },
+    updateUpgrades: function(){
+        upgradeContainer.innerHTML = ""
+        for (i=0; i < upgrade.name.length; i++){
+            if (!upgrade.purchased[i]) {
+                if (upgrade.type[i] == "building" && building.amount[upgrade.buildingIndex[i]] >= upgrade.requirement[i]){
+                    upgradeContainer.innerHTML += `<img src="./img/${upgrade.image[i]}" title="${upgrade.name[i]} &#10; ${upgrade.description[i]} &#10; ${upgrade.cost[i]} bamboo" index="${i}">`
+                }
+                else if (upgrade.type[i] == "click" && game.totalClicks >= upgrade.requirement[i]){
+                    upgradeContainer.innerHTML += `<img src="./img/${upgrade.image[i]}" title="${upgrade.name[i]} &#10; ${upgrade.description[i]} &#10; ${upgrade.cost[i]} bamboo" index="${i}">`
+                }
+            }
         }
     }
 }
@@ -165,6 +179,68 @@ const building = {
     }
 }
 
+//Upgrades object
+
+const upgrade = {
+    name: [
+        "Strong hands",
+        "Genetically modified bamboo"
+    ],
+    description: [
+        "You're getting better at collecting bamboo. Your clicking power gets doubled",
+        "You found some nice bamboo shoots online. Double income from plants"
+    ],
+    image: [
+        "bamboo.png",
+        "bambooShoot.jpg"
+    ],
+    type: [
+        "click",
+        "building"
+    ],
+    cost: [
+        100,
+        100
+    ],
+    buildingIndex: [
+        0,
+        0
+    ],
+    requirement: [
+        1,
+        10
+    ],
+    bonus: [
+        2,
+        2
+    ],
+    purchased: [
+        false,
+        false
+    ],
+
+    purchase: function(index) {
+        if (!this.purchased[index] && game.bamboo >= this.cost[index]) {
+            if (this.type[index] == "building" && building.amount[this.buildingIndex[index]] >= this.requirement[index]){
+                game.bamboo -= this.cost[index]
+                building.income[this.buildingIndex[index]] *= this.bonus[index]
+                this.purchased[index] = true
+
+                display.updateScore()
+                display.updateUpgrades()
+            }
+            else if (this.type[index] == "click" && game.totalClicks >= this.requirement[index]){
+                game.bamboo -= this.cost[index]
+                game.clickingPower *= this.bonus[index]
+                this.purchased[index] = true
+
+                display.updateScore()
+                display.updateUpgrades()
+            }
+        }
+    }
+}
+
 //Saving game
 
 const saveGame = () => {
@@ -207,18 +283,26 @@ const loadGame = () => {
         game.totalClicks++
     })
 
+    //Shop listener - triggers a purchase funtcion with correct index
     shopContainer.addEventListener("click", event => {
         building.purchase(event.target.getAttribute("index"))
+    })
+
+    //Upgrade listener = triggers a pruchase function of upgrade with correct id
+    upgradeContainer.addEventListener("click", event => {
+        upgrade.purchase(event.target.getAttribute("index"))
     })
 
     setInterval(() => {
         game.bamboo += Math.round(game.getBambooPerSecond() * 10) / 10
         game.totalBamboo += Math.round(game.getBambooPerSecond() * 10) / 10
         display.updateScore()
+        display.updateUpgrades()
     }, 1000)
 //Loading everything on refresh
 
 window.onload = function(){
     display.udpateShop()
     display.updateScore()
+    display.updateUpgrades()
 }

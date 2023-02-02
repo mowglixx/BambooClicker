@@ -53,3 +53,7 @@ table:hover {
 table:active {
     transform: scale(1.01);
 }
+
+#upgradeContainer img {
+    width: 64px;
+}
