@@ -5,7 +5,7 @@
 }
 
 img{
-    width: 100%;
+    width: 20%;
     margin: auto 0;
 }
 
@@ -18,13 +18,38 @@ img{
 }
 
 .middle{
-    width: 60%;
+    width: 80%;
 }
 
-.right{
+#shopContainer{
     width: 20%;
+}
+
+table {
+    height: 4rem;
+    width: 16rem;
+    background-color: #cfcfcf;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    margin: 10px;
 }
 
 table img {
     width: 50%;
+}
+
+.unselectable {
+    -webkit-user-select: none; /* Safari */        
+    -moz-user-select: none; /* Firefox */
+    -ms-user-select: none; /* IE10+/Edge */
+    user-select: none; /* Standard */
+}
+
+table:hover {
+    transform: scale(0.95);
+}
+
+table:active {
+    transform: scale(1.01);
 }
