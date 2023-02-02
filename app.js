@@ -176,6 +176,7 @@ const building = {
             display.updateScore()
             display.udpateShop()
             display.updateUpgrades()
+            achievement.getAchievement()
         }
     }
 }
@@ -237,6 +238,57 @@ const upgrade = {
 
                 display.updateScore()
                 display.updateUpgrades()
+            }
+        }
+    }
+}
+
+const achievement = {
+    name: [
+        "Clicking rookie",
+        "Plant rookie",
+        "Passive rookie"
+    ],
+    requirement: [
+        10,
+        1,
+        40
+    ],
+    description: [
+        "You clicked 10 times!",
+        "Got 10 plants",
+        "Earning 1 bamboo per second"
+    ],
+    type: [
+        "click",
+        "building",
+        "income"
+    ],
+    buildingIndex: [
+        0,
+        0,
+        0
+    ],
+    achieved: [
+        false,
+        false,
+        false
+    ],
+    getAchievement: function() {
+        for (i=0; i < this.name.length; i++){
+            if (!this.achieved[i]){
+                if (this.type[i] == "click" && game.totalClicks >= this.requirement[i]){
+                    alert("click")
+                    this.achieved[i] = true
+                }
+                else if (this.type[i] == "building" && building.amount[this.buildingIndex[i]] >= this.requirement[i]){
+                    alert("building")
+                    this.achieved[i] = true
+                }
+                else if (this.type[i] == "income" && bambooPerSecondDisplay.innerHTML >= this.requirement[i]){
+                    alert("income")
+                    this.achieved[i] = true
+                }
             }
         }
     }
@@ -324,6 +376,7 @@ setInterval(() => {
     display.updateUpgrades()
     display.updateScore()
     display.udpateShop()
+    achievement.getAchievement()
     saveGame()
 }, 10000)
 
