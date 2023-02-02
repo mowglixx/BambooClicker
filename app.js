@@ -307,7 +307,8 @@ const saveGame = () => {
         buildingAmount: building.amount,
         buildingIncome: building.income,
         buildingCost: building.cost,
-        upgradePurchased: upgrade.purchased
+        upgradePurchased: upgrade.purchased,
+        achievementAchieved: achievement.achieved
     }
     localStorage.setItem("gameSave", JSON.stringify(gameSave))
 }
@@ -329,18 +330,23 @@ const loadGame = () => {
             }
         }
         if (typeof savedGame.buildingIncome !== "undefined") {
-            for (i=0; i < savedGame.buildingAmount.length; i++){
+            for (i=0; i < savedGame.buildingIncome.length; i++){
                 building.income[i] = savedGame.buildingIncome[i]
             }
         }
         if (typeof savedGame.buildingCost !== "undefined") {
-            for (i=0; i < savedGame.buildingAmount.length; i++){
+            for (i=0; i < savedGame.buildingCost.length; i++){
                 building.cost[i] = savedGame.buildingCost[i]
             }
         }
         if (typeof savedGame.upgradePurchased !== "undefined") {
-            for (i=0; i < savedGame.buildingAmount.length; i++){
+            for (i=0; i < savedGame.upgradePurchased.length; i++){
                 upgrade.purchased[i] = savedGame.upgradePurchased[i]
+            }
+        }
+        if (typeof savedGame.achievementAchieved !== "undefined") {
+            for (i=0; i < savedGame.achievementAchieved.length; i++){
+                achievement.achieved[i] = savedGame.achievementAchieved[i]
             }
         }
     }
