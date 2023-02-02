@@ -253,7 +253,8 @@ const saveGame = () => {
         version: game.version,
         buildingAmount: building.amount,
         buildingIncome: building.income,
-        buildingCost: building.cost
+        buildingCost: building.cost,
+        upgradePurchased: upgrade.purchased
     }
     localStorage.setItem("gameSave", JSON.stringify(gameSave))
 }
@@ -272,6 +273,7 @@ const loadGame = () => {
         if (typeof savedGame.buildingAmount !== "undefined") {building.amount = savedGame.buildingAmount}
         if (typeof savedGame.buildingIncome !== "undefined") {game.income = savedGame.buildingIncome}
         if (typeof savedGame.buildingCost !== "undefined") {game.cost = savedGame.buildingCost}
+        if (typeof savedGame.upgradePurchased !== "undefined") {upgrade.purchased = savedGame.upgradePurchased}
     }
 }
 
