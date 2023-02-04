@@ -491,15 +491,15 @@ const achievement = {
         for (i=0; i < this.name.length; i++){
             if (!this.achieved[i]){
                 if (this.type[i] == "click" && game.totalClicks >= this.requirement[i]){
-                    achievementPopUp.innerHTML += `<div id="popUp" class="popUpStyle"><img src="./img/${achievement.image[i]}" alt=""><div><h2>Achievement get!</h2><p>${achievement.name[i]}</p><p>${achievement.description[i]}</p></div></div>`
+                    // achievementPopUp.innerHTML += `<div id="popUp" class="popUpStyle"><img src="./img/${achievement.image[i]}" alt=""><div><h2>Achievement get!</h2><p>${achievement.name[i]}</p><p>${achievement.description[i]}</p></div></div>`
                     this.achieved[i] = true
                 }
                 else if (this.type[i] == "building" && building.amount[this.buildingIndex[i]] >= this.requirement[i]){
-                    achievementPopUp.innerHTML += `<div id="popUp" class="popUpStyle"><img src="./img/${achievement.image[i]}" alt=""><div><h2>Achievement get!</h2><p>${achievement.name[i]}</p><p>${achievement.description[i]}</p></div></div>`
+                    // achievementPopUp.innerHTML += `<div id="popUp" class="popUpStyle"><img src="./img/${achievement.image[i]}" alt=""><div><h2>Achievement get!</h2><p>${achievement.name[i]}</p><p>${achievement.description[i]}</p></div></div>`
                     this.achieved[i] = true
                 }
                 else if (this.type[i] == "income" && bambooPerSecondDisplay.innerHTML >= this.requirement[i]){
-                    achievementPopUp.innerHTML += `<div id="popUp" class="popUpStyle"><img src="./img/${achievement.image[i]}" alt=""><div><h2>Achievement get!</h2><p>${achievement.name[i]}</p><p>${achievement.description[i]}</p></div></div>`
+                    // achievementPopUp.innerHTML += `<div id="popUp" class="popUpStyle"><img src="./img/${achievement.image[i]}" alt=""><div><h2>Achievement get!</h2><p>${achievement.name[i]}</p><p>${achievement.description[i]}</p></div></div>`
                     this.achieved[i] = true
                 }
             }
