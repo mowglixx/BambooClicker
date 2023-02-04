@@ -15,7 +15,7 @@ const upgradeContainer = document.querySelector("#upgradeContainer")
 const achievementContainer = document.querySelector("#achievementContainer")
 const achievementPopUp = document.querySelector("#achievementPopUp")
 const versionDisplay = document.querySelector("#version")
-
+const coll = document.getElementsByClassName("collapsible");
 //Game object - Contains all important variables and socre functions
 
 const game = {
@@ -622,4 +622,16 @@ window.onload = function(){
     display.updateUpgrades()
     display.updateAchievement()
     display.updateVersion()
+}
+
+for (i = 0; i < coll.length; i++) {
+    coll[i].addEventListener("click", function() {
+        this.classList.toggle("active");
+        var content = this.nextElementSibling;
+        if (content.style.display === "block") {
+            content.style.display = "none";
+        } else {
+            content.style.display = "block";
+        }
+    });
 }
