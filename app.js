@@ -14,6 +14,7 @@ const shopContainer = document.querySelector("#shopContainer")
 const upgradeContainer = document.querySelector("#upgradeContainer")
 const achievementContainer = document.querySelector("#achievementContainer")
 const achievementPopUp = document.querySelector("#achievementPopUp")
+const versionDisplay = document.querySelector("#version")
 
 //Game object - Contains all important variables and socre functions
 
@@ -76,6 +77,9 @@ const display = {
                 achievementContainer.innerHTML += `<img src="./img/questionmark.png">`
             }
         }
+    },
+    updateVersion: function(){
+        versionDisplay.innerHTML = `V. ${game.version}`
     }
 }
 
@@ -201,8 +205,8 @@ const upgrade = {
         "cursor.png",
         "cursor.png",
         "goldencursor.png",
-        "bambooShoot.png",
-        "bambooShoot.png",
+        "bambooshoot.png",
+        "bambooshoot.png",
         "plot.png",
         "garden.png",
         "park.png",
@@ -487,7 +491,7 @@ const achievement = {
         for (i=0; i < this.name.length; i++){
             if (!this.achieved[i]){
                 if (this.type[i] == "click" && game.totalClicks >= this.requirement[i]){
-                    alert("click")
+                    achievementPopUp.innerHTML += `<div id="popUp"><img src="./img/${achievement.image[i]}"><h2>Achievement get!</h2><p>${achievement.name[i]}</p><p>${achievement.description[i]}</p></div>`
                     this.achieved[i] = true
                 }
                 else if (this.type[i] == "building" && building.amount[this.buildingIndex[i]] >= this.requirement[i]){
@@ -600,7 +604,7 @@ setInterval(() => {
     display.updateScore()
 }, 1000)
 
-//Executes every 10 seconds - Saves game and udates all displays
+//Executes every 1 second - Saves game and udates all displays
 setInterval(() => {
     display.updateUpgrades()
     display.updateScore()
@@ -608,7 +612,7 @@ setInterval(() => {
     display.updateAchievement()
     achievement.getAchievement()
     saveGame()
-}, 10000)
+}, 1000)
 
 //Loading everything on refresh
 window.onload = function(){
@@ -617,4 +621,5 @@ window.onload = function(){
     display.updateScore()
     display.updateUpgrades()
     display.updateAchievement()
+    display.updateVersion()
 }

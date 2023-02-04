@@ -18,6 +18,12 @@ img{
     background-image: url(./img/bamboo.png);
     width: 256px;
     height: 256px;
+    display: inline-block;
+}
+
+#reset{
+    display: inline-block;
+    width: 100%;
 }
 
 #bamboo:hover{
@@ -31,6 +37,7 @@ img{
 
 .gameCanvas{
     display: flex;
+    text-align: center;
 }
 
 .middle{
@@ -76,4 +83,17 @@ table:active {
 
 #upgradeContainer img {
     width: 64px;
+}
+
+footer{
+    position: absolute;
+    bottom: 0;
+}
+
+#popUp{
+    width: 400px;
+    background-color: #cfcfcf;
+    position: absolute;
+    bottom: 0;
+    text-align: center;
 }
