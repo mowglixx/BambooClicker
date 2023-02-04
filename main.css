@@ -90,10 +90,13 @@ footer{
     bottom: 0;
 }
 
-#popUp{
-    width: 400px;
-    background-color: #cfcfcf;
+#achievementPopUp{
+    display: flex;
     position: absolute;
-    bottom: 0;
+}
+
+#popUp{
+    display: flex;
+    background-color: #cfcfcf;
     text-align: center;
 }
