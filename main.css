@@ -1,16 +1,28 @@
+@font-face {
+    font-family: bamboo;
+    src: url(./BambooGothic-Book.otf);
+}
+
 * {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
+    font-family: bamboo;
+}
+
+body{
+    height: 100%;
 }
 
 img{
     margin: auto 0;
+    
 }
 
 #upgradeContainer img {
     background-color: #cfcfcf;
-    border: solid 2px #111;
+    border: solid 10px transparent;
+    border-image: url(./img/borderfull.png) 10 round;
     margin: 2px;
 }
 
@@ -19,6 +31,7 @@ img{
     width: 256px;
     height: 256px;
     display: inline-block;
+    
 }
 
 #reset{
@@ -38,10 +51,14 @@ img{
 .gameCanvas{
     display: flex;
     text-align: center;
+    flex-wrap: wrap;
 }
 
 .middle{
     width: 65%;
+    border: solid 10px transparent;
+    border-image: url(./img/borderfull.png) 10 round;
+    background-color: #cfcfcf;
 }
 
 .right{
@@ -49,6 +66,9 @@ img{
     display: flex;
     flex-direction: column;
     align-items: center;
+    border: solid 10px transparent;
+    border-image: url(./img/borderfull.png) 10 round;
+    background-color: #cfcfcf;
 }
 
 #shopContainer{
@@ -56,13 +76,15 @@ img{
 }
 
 table {
-    height: 4rem;
-    width: 100%;
-    background-color: #cfcfcf;
+    height: 6rem;
+    background-image: url(./img/bamboobg.png);
     display: flex;
     align-items: center;
     justify-content: space-around;
     margin-bottom: 10px;
+    border: solid 10px transparent;
+    border-image: url(./img/borderfull.png) 10 round;
+    font-size: 20px;
 }
 
 .unselectable {
@@ -83,6 +105,7 @@ table:active {
 
 #upgradeContainer img {
     width: 64px;
+    background-image: url(./img/bamboobg.png);
 }
 
 #popUp{
@@ -115,6 +138,8 @@ table:active {
     overflow: hidden;
     background-color: #f1f1f1;
 }
+
+
 
 @media (min-width: 1281px) {
 
@@ -184,5 +209,9 @@ table:active {
     .gameCanvas{
         display: flex;
         flex-wrap: wrap;
+    }
+
+    table {
+        font-size: 14px;
     }
 }
