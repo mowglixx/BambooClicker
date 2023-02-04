@@ -40,7 +40,7 @@ img{
 }
 
 #bamboo:hover{
-    transition: ease 0.4s;
+    transition: ease 0.1s;
     transform: scale(0.95);
 }
 
@@ -139,7 +139,11 @@ table:active {
     background-color: #f1f1f1;
 }
 
-
+#reset{
+    font-size: 40px;
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
 
 @media (min-width: 1281px) {
 
