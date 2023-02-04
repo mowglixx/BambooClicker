@@ -5,38 +5,42 @@
 }
 
 img{
-    width: 20%;
     margin: auto 0;
+}
+
+#bamboo{
+    background-image: url(./img/bamboo.png);
+    width: 256px;
+    height: 256px;
 }
 
 .gameCanvas{
     display: flex;
 }
 
-.left{
-    width: 20%;
+.middle{
+    width: 65%;
 }
 
-.middle{
-    width: 80%;
+.right{
+    width: 35%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 #shopContainer{
-    width: 20%;
+    width: 100%;
 }
 
 table {
     height: 4rem;
-    width: 16rem;
+    width: 100%;
     background-color: #cfcfcf;
     display: flex;
     align-items: center;
     justify-content: space-around;
     margin: 10px;
-}
-
-table img {
-    width: 50%;
 }
 
 .unselectable {

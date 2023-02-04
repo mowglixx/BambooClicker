@@ -12,6 +12,7 @@ const buyButton = document.querySelector("#plant")
 const plantAmountDisplay = document.querySelector(".plantAmount")
 const shopContainer = document.querySelector("#shopContainer")
 const upgradeContainer = document.querySelector("#upgradeContainer")
+const achievementContainer = document.querySelector("#achievementContainer")
 //Updating score on refresh from localStorage
 
 //bambooScoreDisplay.innerHTML = localStorage.getItem("score")
@@ -89,7 +90,7 @@ const display = {
     udpateShop: function(){
         shopContainer.innerHTML = ""
         for (i=0; i < building.name.length; i++){
-            shopContainer.innerHTML += `<table id="${building.name[i]}" class="unselectable" index="${i}"><tr index="${i}"><td class="image" index="${i}"></td><td index="${i}">Bamboo ${building.name[i]}</td><td index="${i}">[<span index="${i}">${building.cost[i]}</span> ${building.price[i]}]:</td><td index="${i}"><span index="${i}">${building.amount[i]}</span></td></tr></table>`
+            shopContainer.innerHTML += `<table id="${building.name[i]}" class="unselectable" index="${i}"><tr index="${i}"><td class="image" index="${i}"><img src="./img/${building.image[i]}" index="${i}"></td><td index="${i}">Bamboo ${building.name[i]}</td><td index="${i}">[<span index="${i}">${building.cost[i]}</span> ${building.price[i]}]:</td><td index="${i}"><span index="${i}">${building.amount[i]}</span></td></tr></table>`
         }
     },
     updateUpgrades: function(){
@@ -121,7 +122,17 @@ const building = {
         "planet",
         "system"
     ],
-    image: [],
+    image: [
+        "bambooshoot.png",
+        "plot.png",
+        "garden.png",
+        "park.png",
+        "forest.png",
+        "jungle.png",
+        "island.png",
+        "planet.png",
+        "system.png"
+    ],
     cost: [
         10,
         10,
@@ -352,6 +363,16 @@ const loadGame = () => {
     }
 }
 
+//Reseting game
+
+const resetGame = () => {
+    if (confirm("Are you sure you want to reset your game?")){
+        let gameSave = {}
+        localStorage.setItem("gameSave", JSON.stringify(gameSave))
+        location.reload()
+    }
+}
+
 //Event Listeners
 
     //Main bamboo button - adding score and counting clicks
@@ -368,6 +389,10 @@ const loadGame = () => {
     //Upgrade listener = triggers a pruchase function of upgrade with correct id
     upgradeContainer.addEventListener("click", event => {
         upgrade.purchase(event.target.getAttribute("index"))
+    })
+
+    document.querySelector("#reset").addEventListener("click", event => {
+        resetGame()
     })
 
 //Adding bamboo every second to a score
