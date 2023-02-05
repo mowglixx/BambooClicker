@@ -59,10 +59,10 @@ const display = {
         for (i=0; i < upgrade.name.length; i++){
             if (!upgrade.purchased[i]) {
                 if (upgrade.type[i] == "building" && building.amount[upgrade.buildingIndex[i]] >= upgrade.requirement[i]){
-                    upgradeContainer.innerHTML += `<img src="./img/${upgrade.image[i]}" title="${upgrade.name[i]} &#10; ${upgrade.description[i]} &#10; ${upgrade.cost[i]} bamboo" index="${i}">`
+                    upgradeContainer.innerHTML += `<img src="./img/${upgrade.image[i]}" class="upgradeTile" title="${upgrade.name[i]} &#10; ${upgrade.description[i]} &#10; ${upgrade.cost[i]} bamboo" index="${i}">`
                 }
                 else if (upgrade.type[i] == "click" && game.totalClicks >= upgrade.requirement[i]){
-                    upgradeContainer.innerHTML += `<img src="./img/${upgrade.image[i]}" title="${upgrade.name[i]} &#10; ${upgrade.description[i]} &#10; ${upgrade.cost[i]} bamboo" index="${i}">`
+                    upgradeContainer.innerHTML += `<img src="./img/${upgrade.image[i]}" class="upgradeTile" title="${upgrade.name[i]} &#10; ${upgrade.description[i]} &#10; ${upgrade.cost[i]} bamboo" index="${i}">`
                 }
             }
         }

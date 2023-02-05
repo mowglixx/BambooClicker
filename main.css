@@ -12,15 +12,14 @@
 
 body{
     height: 100%;
+    background-color: #8ee4af;
 }
 
 img{
     margin: auto 0;
-    
 }
 
 #upgradeContainer img {
-    background-color: #cfcfcf;
     border: solid 10px transparent;
     border-image: url(./img/borderfull.png) 10 round;
     margin: 2px;
@@ -31,7 +30,6 @@ img{
     width: 256px;
     height: 256px;
     display: inline-block;
-    
 }
 
 #reset{
@@ -58,7 +56,7 @@ img{
     width: 65%;
     border: solid 10px transparent;
     border-image: url(./img/borderfull.png) 10 round;
-    background-color: #cfcfcf;
+    background-color: #8ee4af;
 }
 
 .right{
@@ -68,7 +66,7 @@ img{
     align-items: center;
     border: solid 10px transparent;
     border-image: url(./img/borderfull.png) 10 round;
-    background-color: #cfcfcf;
+    background-color: #8ee4af;
 }
 
 #shopContainer{
@@ -76,15 +74,17 @@ img{
 }
 
 table {
-    height: 6rem;
+    height: 5.5rem;
     background-image: url(./img/bamboobg.png);
     display: flex;
-    align-items: center;
-    justify-content: space-around;
     margin-bottom: 10px;
     border: solid 10px transparent;
     border-image: url(./img/borderfull.png) 10 round;
     font-size: 20px;
+}
+
+table img {
+    margin-right: 20px;
 }
 
 .unselectable {
@@ -104,8 +104,12 @@ table:active {
 }
 
 #upgradeContainer img {
-    width: 64px;
     background-image: url(./img/bamboobg.png);
+}
+
+.upgradeTile:hover{
+    transform: scale(0.95);
+    transition: ease 0.1s;
 }
 
 #popUp{
@@ -117,8 +121,7 @@ table:active {
 }
 
 .collapsible {
-    background-color: #eee;
-    color: #444;
+    background-color: #5cdb95;
     cursor: pointer;
     padding: 18px;
     width: 100%;
@@ -126,23 +129,29 @@ table:active {
     text-align: left;
     outline: none;
     font-size: 15px;
+    text-align: center;
 }
 
 .active, .collapsible:hover {
-    background-color: #ccc;
+    background-color: #379683;
 }
 
 .content {
     padding: 0 18px;
     display: none;
     overflow: hidden;
-    background-color: #f1f1f1;
+    background-color: #379683;
 }
 
 #reset{
     font-size: 40px;
     margin-top: 20px;
     margin-bottom: 10px;
+    background-color: #5cdb95;
+}
+
+#reset:hover{
+    background-color: #379683;
 }
 
 @media (min-width: 1281px) {
@@ -217,5 +226,9 @@ table:active {
 
     table {
         font-size: 14px;
+    }
+
+    table img {
+        margin-right: 5px;
     }
 }
