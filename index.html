@@ -1,51 +1,39 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./main.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/main.css" />
     <title>Bamboo clicker</title>
-</head>
-<body>
-    <nav>
-
-    </nav>
+  </head>
+  <body>
     <div class="gameCanvas">
-    <!--<div class="left">
-    </div>-->
-        <div class="middle">
-            <div class="mainGame">   
-                <h1 class="unselectable">Bamboo Clicker</h1>
-                <p class="unselectable">Bamboo: <span id="score">0</span></p>
-                <p class="unselectable">Bamboo per second: <span id="scorePerSecond">0</span></p>
-                <div id="bamboo"></div>
-            </div>
-            <button type="button" class="collapsible"><h1>Achievements</h1></button>
-            <div id="achievementContainer" class="content">
-                
-            </div>
-            <div id="achievementPopUp">
-
-            </div>
-            <button id="reset">Reset</button>
+      <div class="middle">
+        <div class="mainGame">
+          <h1>Bamboo Clicker Abridged</h1>
+          <p>Bamboo: <span id="score">0</span></p>
+          <p>Bamboo per second: <span id="scorePerSecond">0</span></p>
+          <div id="bamboo"></div>
         </div>
-        <div class="right">
-            <h1 class="unselectable">
-                Store
-            </h1>
-            <div id="upgradeContainer">
-
-            </div>
-            <div id="shopContainer">
-        
-            </div>
-        </div>
+        <button type="button" class="collapsible"><h1>Achievements</h1></button>
+        <div id="achievementContainer" class="content"></div>
+        <div id="achievementPopUp"></div>
+        <button id="reset">Reset</button>
+        <footer>
+          <p id="version"></p>
+          &copy;
+          <a href="https://github.com/Kuboxxxxx/ClickerGame">Jakub Szpyra</a>
+          2023 Forked by
+          <a href="https://github.com/mowglixx/BambooClicker">Dan Monaghan</a>
+        </footer>
+      </div>
+      <div class="right">
+        <h1>Store</h1>
+        <div id="upgradeContainer"></div>
+        <div id="shopContainer"></div>
+      </div>
     </div>
-    <footer class="unselectable">
-        <p id="version"></p>
-        &copy; Jakub Szpyra 2023
-    </footer>
-    <script src="./app.js"></script>
-</body>
+    <script src="js/game.js"></script>
+  </body>
 </html>
