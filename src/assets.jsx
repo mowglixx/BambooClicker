@@ -22,6 +22,9 @@ import iconQuestionMark from "./assets/images/iconQuestionMark.png";
 // logos
 import logoBambooSm from "./assets/images/logoBambooSm.png";
 
+// fonts
+import bambooFont from "./assets/fonts/BambooGothic-Book.ttf";
+
 const assets = {
   // bamboo related assets
   headBamboo: { src: headBamboo, alt: "the faceless body of the bamboo" },
@@ -45,6 +48,8 @@ const assets = {
   logoBambooSm: { src: logoBambooSm, alt: "Small bamboo plant with a face" },
   logoBambooMd: { src: logoBambooSm, alt: "Medium bamboo plant with a face" },
   logoBambooLg: { src: logoBambooSm, alt: "Large bamboo plant with a face" },
+  // Fonts
+  bambooFont,
 };
 
 export default assets;

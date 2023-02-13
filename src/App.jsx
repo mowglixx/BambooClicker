@@ -1,13 +1,33 @@
+// Hooks
 import { useState, useEffect, useMemo, useReducer } from "react";
+
+// Components
 import AchievementList from "./components/Achievements";
 import Store from "./components/Store";
 import Footer from "./components/Footer";
+
+// Styling
+import { injectGlobal, css } from "@emotion/css";
+
+injectGlobal`
+@font-face{
+  font-family: "Bamboo";
+  src: url(${assets.bambooFont})
+}
+*{
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+`;
 
 // default data (new games)
 import defaultAchievements from "./defaults/acheivements";
 import defaultStoreItems from "./defaults/storeItems";
 import defaultStoreUpgrades from "./defaults/storeUpgrades";
 import defaultPlayer from "./defaults/player";
+import assets from "./assets";
 
 const App = () => {
   const [player, setPlayer] = useState(defaultPlayer);
