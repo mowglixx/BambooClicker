@@ -23,5 +23,8 @@ dist-ssr
 *.sln
 *.sw?
 
-# old project files
+# old project files from vanilla js
 old files/
+
+# ignore package lock... for now
+package-lock.json
