@@ -1,4 +1,4 @@
-# Bamboo Clicker Abridged
+# ![image](src/assets/images/logoBambooSm.png) Bamboo Clicker Abridged
 
 > An effort to convert a student project to ReactJS
 
