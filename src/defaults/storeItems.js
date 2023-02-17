@@ -7,6 +7,7 @@ const defaultStoreItems = [
         baseCost: 15,
         multiplier: 1.15, // amount per purchase to multiply by
         img: assets.iconPlant,
+        income: 0.1,
     },
     {
         name: "Bamboo Plot",
@@ -14,6 +15,7 @@ const defaultStoreItems = [
         baseCost: 100,
         multiplier: 1.1,
         img: assets.iconPlot,
+        income: 1,
     },
     {
         name: "Bamboo Garden",
@@ -21,6 +23,7 @@ const defaultStoreItems = [
         baseCost: 1100,
         multiplier: 1.1,
         img: assets.iconGarden,
+        income: 8,
     },
     {
         name: "Bamboo Park",
@@ -28,6 +31,7 @@ const defaultStoreItems = [
         baseCost: 12000,
         multiplier: 1.1,
         img: assets.iconPark,
+        income: 47,
     },
     {
         name: "Bamboo Forest",
@@ -35,6 +39,7 @@ const defaultStoreItems = [
         baseCost: 130000,
         multiplier: 1.1,
         img: assets.iconForest,
+        income: 260,
     },
     {
         name: "Bamboo Jungle",
@@ -42,6 +47,7 @@ const defaultStoreItems = [
         baseCost: 1400000,
         multiplier: 1.1,
         img: assets.iconJungle,
+        income: 1400,
     },
     {
         name: "Bamboo Island",
@@ -49,6 +55,7 @@ const defaultStoreItems = [
         baseCost: 20000000,
         multiplier: 1.1,
         img: assets.iconIsland,
+        income: 7800,
     },
     {
         name: "Bamboo Planet",
@@ -56,6 +63,7 @@ const defaultStoreItems = [
         baseCost: 330000000,
         multiplier: 1.1,
         img: assets.iconPlanet,
+        income: 44000,
     },
     {
         name: "Bamboo System",
@@ -63,6 +71,7 @@ const defaultStoreItems = [
         baseCost: 5100000000,
         multiplier: 1.1,
         img: assets.iconSystem,
+        income: 260000,
     },
 ]
 

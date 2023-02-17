@@ -1,0 +1,175 @@
+@font-face {
+  font-family: bamboo;
+  src: url("../assets/fonts/BambooGothic-Book.ttf");
+}
+
+:root {
+  --bgColor: #8ee4af;
+  --onBg: #222;
+
+  /* states */
+  --hoverFilter: brightness(1.2);
+  --activeFilter: brightness(0.8);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: bamboo;
+  user-select: none; /* Standard */
+  -webkit-user-select: none; /* Safari */
+  -moz-user-select: none; /* Firefox */
+  -ms-user-select: none; /* IE10+/Edge */
+  /* color: var(--onBg); */
+  background-color: transparent;
+}
+
+body {
+  max-height: 100vh;
+  background-color: var(--bgColor);
+}
+
+img {
+  margin: auto 0;
+}
+
+#upgradeContainer img {
+  border: solid 10px transparent;
+  border-image: url("../assets/images/borderfull.png") 10 round;
+  margin: 2px;
+}
+
+.bambooButton {
+  background-image: url("../assets/images/bamboo.png");
+  background-size: cover;
+  width: 256px;
+  height: 256px;
+  display: inline-block;
+  border: none;
+}
+.bambooButton:hover {
+  transition: ease 0.1s;
+  transform: scale(0.95);
+}
+
+.bambooButton:active {
+  transform: scale(1.01);
+}
+
+#reset {
+  display: inline-block;
+  width: 100%;
+}
+
+#gameCanvas {
+  display: flex;
+  text-align: center;
+  flex-wrap: wrap;
+}
+
+.border {
+  border: solid 10px transparent;
+  border-image: url("../assets/images/borderfull.png") 10 round;
+}
+
+.bambooBg {
+  background-image: url("../assets/images/bamboobg.png");
+}
+
+.storeWrapper {
+  display: flex;
+  flex-direction: column;
+}
+.storeWrapper > div {
+  width: 100%;
+}
+
+.itemNameWrapper {
+  display: flex;
+  flex-direction: column;
+}
+
+.upgradeTile {
+  transform: scale(0.95);
+  transition: ease 0.1s;
+}
+.upgradeTile:hover {
+  transform: scale(0.95);
+}
+
+#popUp {
+  width: 400px;
+  background-color: #cfcfcf;
+  position: absolute;
+  bottom: 0;
+  text-align: center;
+}
+
+.button {
+  background-color: #5cdb95;
+  cursor: pointer;
+  padding: 18px;
+  width: 100%;
+  border: none;
+  text-align: left;
+  outline: none;
+  font-size: 15px;
+  background-color: #5cdb95;
+}
+
+.content {
+  padding: 0 18px;
+  display: none;
+  overflow: hidden;
+  background-color: #379683;
+}
+
+.active,
+.collapsible:hover,
+#reset:hover {
+  filter: var(--hoverFilter);
+}
+.collapsible:active {
+  filter: brightness(0.8);
+}
+
+.notSenpai {
+  content: "";
+  background-image: url("../assets/images/bambooFace.png");
+  min-width: 100%;
+  min-height: 100%;
+  background-repeat: no-repeat;
+}
+.senpai {
+  content: "";
+  background-image: url("../assets/images/senpai.png");
+  min-width: 100%;
+  min-height: 100%;
+  background-size: 60%;
+  background-position: 30% 70%;
+  background-repeat: no-repeat;
+}
+
+@media screen and (max-width: 800px) {
+  .middle {
+    width: 100%;
+  }
+
+  .right {
+    width: 100%;
+  }
+
+  .gameCanvas {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  table {
+    font-size: 14px;
+  }
+
+  table img {
+    margin-right: 5px;
+  }
+}

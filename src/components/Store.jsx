@@ -55,8 +55,10 @@ const StoreItem = ({ item, player }) => {
       width: 100%;
       justify-content: start;
       transition: ease 0.1s;
+      border: 
+      padding: 1em;
       &:hover {
-        transform: scale(1.05);
+        transform: scaleY(1.1) scaleX(1.01);
       }
       &:active {
         transform: scale(1.01);
@@ -81,6 +83,7 @@ const StoreItem = ({ item, player }) => {
           <span className={styles.costCurrency}>B</span>
           {costMultiplier(item, player.items[item.id]?.owned)}
         </div>
+        <div className={styles.description}>{item.description}</div>
       </div>
     </button>
   );
